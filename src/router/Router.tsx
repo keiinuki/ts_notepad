@@ -25,10 +25,10 @@ export const Router = () => {
             </Route>
           </Switch>
         )}
-      ></Route>
+      />
       <Route path="/*">
         <Page404 />
       </Route>
     </Switch>
-  );
-};
+  )
+}

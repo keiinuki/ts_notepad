@@ -19,11 +19,12 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
     tsconfigRootDir: __dirname,
-    project: ["./tsconfig.json"],
+    project: [ "./tsconfig.json" ],
   },
-  plugins: ["react", "@typescript-eslint"],
-  ignorePatterns: [".eslintrc.js"],
+  plugins: [ "react", "@typescript-eslint" ],
+  ignorePatterns: [ ".eslintrc.js" ],
   rules: {
+    "arrow-body-style": "always",
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "import/prefer-default-export": "off",
@@ -39,7 +40,7 @@ module.exports = {
     "react/jsx-filename-extension": [
       "error",
       {
-        extensions: [".jsx", ".tsx"],
+        extensions: [ ".jsx", ".tsx" ],
       },
     ],
     "react/react-in-jsx-scope": "off",
@@ -53,8 +54,8 @@ module.exports = {
   settings: {
     "import/resolver": {
       node: {
-        paths: ["src"],
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        paths: [ "src" ],
+        extensions: [ ".js", ".jsx", ".ts", ".tsx" ],
       },
     },
   },
