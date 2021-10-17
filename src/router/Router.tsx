@@ -12,19 +12,21 @@ export const Router = () => {
       </Route>
       <Route
         path="/notepad"
-        render={({ match: { url } }) => (
-          <Switch>
-            <Route exact path={`${url}`}>
-              <Notepad />
-            </Route>
-            <Route path={`${url}/pastarticles`}>
-              <PastArticles />
-            </Route>
-            <Route path={`${url}/*`}>
-              <Page404 />
-            </Route>
-          </Switch>
-        )}
+        render={({ match: { url } }) => {
+          return (
+            <Switch>
+              <Route exact path={`${url}`}>
+                <Notepad />
+              </Route>
+              <Route path={`${url}/pastarticles`}>
+                <PastArticles />
+              </Route>
+              <Route path={`${url}/*`}>
+                <Page404 />
+              </Route>
+            </Switch>
+          )
+        }}
       />
       <Route path="/*">
         <Page404 />

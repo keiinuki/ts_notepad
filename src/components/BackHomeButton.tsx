@@ -1,12 +1,12 @@
 import { memo } from "react";
 import { useHistory } from "react-router-dom";
 import { useRecoilState } from "recoil";
+import { Button } from "@chakra-ui/react";
 import { getMemosState } from "../store/atom";
 import { Memo } from "../type/Type";
-import { Button } from "@chakra-ui/react";
 
 type ButtonColor = {
-  color?: string;
+  color: string;
 };
 
 export const BackHomeButton = memo((props: ButtonColor) => {

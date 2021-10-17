@@ -1,10 +1,6 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import axios from "axios";
-import { Keys, getItem } from "../utils/LocalStorage";
-import { Memo, ModalButton } from "../type/Type";
-import { memo } from "react";
 import { useRecoilState } from "recoil";
-import { getMemosState, addIdState } from "../store/atom";
 import toast, { Toaster } from "react-hot-toast";
 import {
   Box,
@@ -14,6 +10,9 @@ import {
   Textarea,
   Text,
 } from "@chakra-ui/react";
+import { Keys, getItem } from "../utils/LocalStorage";
+import { Memo, ModalButton } from "../type/Type";
+import { getMemosState, addIdState } from "../store/atom";
 
 export const EditForm = memo((props: ModalButton) => {
   const [getMemos, setGetMemos] = useRecoilState<Memo[]>(getMemosState);

@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { memo } from "react";
+import { useState, memo } from "react";
 import axios from "axios";
 import { useRecoilState } from "recoil";
+import toast, { Toaster } from "react-hot-toast";
+import { Box, Button, FormControl, Input } from "@chakra-ui/react";
 import { getMemosState } from "../store/atom";
 import { Memo } from "../type/Type";
 import { Keys, getItem } from "../utils/LocalStorage";
-import toast, { Toaster } from "react-hot-toast";
-import { Box, Button, FormControl, Input } from "@chakra-ui/react";
 
 export const DeleteMemoButton = memo(() => {
   const [id, setId] = useState<string>("");

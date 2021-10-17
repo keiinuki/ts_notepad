@@ -24,7 +24,7 @@ module.exports = {
   plugins: [ "react", "@typescript-eslint" ],
   ignorePatterns: [ ".eslintrc.js" ],
   rules: {
-    "arrow-body-style": "always",
+    "arrow-body-style": [ "error", "always" ],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "import/prefer-default-export": "off",
