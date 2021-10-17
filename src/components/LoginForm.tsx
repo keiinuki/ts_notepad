@@ -1,10 +1,9 @@
-import { memo } from "react";
-import { useState } from "react";
+import { useState, memo } from "react";
 import axios from "axios";
 import { Redirect } from "react-router";
-import { Keys, setItem } from "../utils/LocalStorage";
 import toast, { Toaster } from "react-hot-toast";
 import { Box, Button, FormControl, Input, Text } from "@chakra-ui/react";
+import { Keys, setItem } from "../utils/LocalStorage";
 
 export const LoginForm = memo(() => {
   const [email, setEmail] = useState<string>("");
@@ -23,7 +22,7 @@ export const LoginForm = memo(() => {
   const onClickLogin = async () => {
     try {
       const response = await axios
-        .post<string, any>("https://raisetech-memo-api.herokuapp.com/api/login", {
+        .post("https://raisetech-memo-api.herokuapp.com/api/login", {
           email: email,
           password: password,
         })

@@ -1,10 +1,9 @@
 import "./components.css";
-import { useState } from "react";
-import { memo } from "react";
-import { EditModal } from "./EditModal";
+import { useState, memo } from "react";
 import { useRecoilState } from "recoil";
-import { addIdState } from "../store/atom";
 import { Box, Button, FormControl, Input } from "@chakra-ui/react";
+import { EditModal } from "./EditModal";
+import { addIdState } from "../store/atom";
 
 export const EditModalButton = memo(() => {
   const [show, setShow] = useState<boolean>(false);

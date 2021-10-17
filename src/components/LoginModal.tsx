@@ -1,7 +1,7 @@
 import "./components.css";
 import { memo } from "react";
-import { LoginForm } from "./LoginForm"
 import { Button, Box } from "@chakra-ui/react";
+import { LoginForm } from "./LoginForm"
 import { ModalButton } from "../type/Type";
 
 export const LoginModal = memo((props: ModalButton) => {

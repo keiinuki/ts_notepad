@@ -1,12 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from 'axios';
-import { Keys, getItem } from "../utils/LocalStorage";
-import { Memo } from "../type/Type"
-import toast, { Toaster } from "react-hot-toast";
-import { LogoutButton } from "../components/LogoutButton";
-import { ToArticlesButton } from "../components/ToArticlesButton";
-import {
+import toast, { Toaster } from "react-hot-toast"; import {
   Box,
   Text,
   FormControl,
@@ -18,6 +13,10 @@ import {
   FormHelperText,
 } from "@chakra-ui/react";
 import Calendar from "react-calendar";
+import { Keys, getItem } from "../utils/LocalStorage";
+import { Memo } from "../type/Type"
+import { LogoutButton } from "../components/LogoutButton";
+import { ToArticlesButton } from "../components/ToArticlesButton";
 import { BackHomeButton } from "../components/BackHomeButton";
 
 export const Notepad = () => {
@@ -112,10 +111,6 @@ export const Notepad = () => {
         />
         <br />
         <input type="date" onChange={onChangeDate} value={date} />
-        {/*<RadioGroup onChange={setMark_div} value={mark_div}>
-          <Radio value="0" >重要</Radio>
-          <Radio value="1">普通</Radio>
-        </RadioGroup>*/}
         <input type="radio" name="revel" value="0" onChange={onChangeMarkDiv} />
         重要
         <input type="radio" name="revel" value="1" onChange={onChangeMarkDiv} />

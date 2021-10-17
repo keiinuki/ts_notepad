@@ -1,8 +1,7 @@
 import "./components.css";
-import { useState } from "react";
-import { memo } from "react";
-import { LoginModal } from "./LoginModal"
+import { useState, memo } from "react";
 import { Button, Box } from "@chakra-ui/react";
+import { LoginModal } from "./LoginModal"
 
 
 export const LoginModalButton = memo(() => {

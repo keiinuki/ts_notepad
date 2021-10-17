@@ -1,7 +1,7 @@
 import "./components.css";
 import { memo } from "react";
-import { EditForm } from "./EditForm";
 import { Button, Box } from "@chakra-ui/react";
+import { EditForm } from "./EditForm";
 import { ModalButton } from "../type/Type";
 
 export const EditModal = memo((props: ModalButton) => {
