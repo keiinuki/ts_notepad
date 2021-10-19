@@ -18,13 +18,12 @@ export const LoginForm = memo(() => {
     e.preventDefault();
     setPassword(e.target.value);
   };
-
   const onClickLogin = async () => {
     try {
       const response = await axios
-        .post("https://raisetech-memo-api.herokuapp.com/api/login", {
-          email: email,
-          password: password,
+        .post<string>("https://raisetech-memo-api.herokuapp.com/api/login", {
+          email,
+          password,
         })
       console.log(response.data.access_token);
       setItem(Keys.access_token, response.data.access_token);
@@ -37,7 +36,7 @@ export const LoginForm = memo(() => {
   };
 
   if (redirect) {
-    return <Redirect to={"/notepad"} />;
+    return <Redirect to="/notepad" />;
   }
 
   return (

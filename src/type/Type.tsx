@@ -4,7 +4,7 @@ export type Memo = {
   category: string,
   description: string,
   date: string,
-  mark_div: number,
+  markDiv: number,
 };
 
 export type ModalButton = {

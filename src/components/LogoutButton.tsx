@@ -8,7 +8,7 @@ import { Memo } from "../type/Type";
 import { Keys, removeItem } from "../utils/LocalStorage";
 
 type ButtonColor = {
-  color?: string;
+  color: string;
 };
 
 export const LogoutButton = memo((props: ButtonColor) => {

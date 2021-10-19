@@ -19,7 +19,7 @@ export const EditModal = memo((props: ModalButton) => {
         </Box>
       </Box>
     );
-  } else {
+  }
     return null;
   }
-});
+);

@@ -21,7 +21,7 @@ export const LoginModal = memo((props: ModalButton) => {
         </Box>
       </Box>
     );
-  } else {
+  }
     return null;
   }
-});
+);

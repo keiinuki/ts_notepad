@@ -19,7 +19,6 @@ import { DeleteMemoButton } from "../components/DeleteMemoButton";
 import { EditModalButton } from "../components/EditModalButton"
 import { BackHomeButton } from "../components/BackHomeButton";
 
-
 export const PastArticles = () => {
   const token = getItem(Keys.access_token);
   const [getMemos, setGetMemos] = useRecoilState<Memo[]>(getMemosState);
@@ -34,7 +33,7 @@ export const PastArticles = () => {
         const newGetMemos = [...getMemos, ...response.data];
         setGetMemos(newGetMemos);
       })
-      .catch((error) => {
+      .catch(() => {
         toast.error("ログインしてください！");
       });
 
@@ -46,7 +45,7 @@ export const PastArticles = () => {
         今までの記事はこちら
       </Text>
       <Flex>
-        <UnorderedList>
+        <UnorderedList>          
           {getMemos.map((getMemos: Memo, index: number) => (
             <Box m={5} p={15} w={300} bg="tomato" key={index}>
               <ListItem>
@@ -60,7 +59,7 @@ export const PastArticles = () => {
                 <br />
                 {getMemos?.date}
                 <br />
-                {getMemos?.mark_div}
+                {getMemos?.markDiv}
               </ListItem>
             </Box>
           ))}
@@ -72,7 +71,7 @@ export const PastArticles = () => {
         <EditModalButton />
 
         <LogoutButton color="white" />
-        <BackHomeButton />
+        <BackHomeButton color="white" />
       </Box>
       <Text textAlign={["center"]} color="green">
         <Link to="/">HOMEはこちら</Link>

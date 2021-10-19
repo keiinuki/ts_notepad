@@ -23,7 +23,7 @@ export const EditForm = memo((props: ModalButton) => {
   const [category, setCategory] = useState<string>(editMemo.category);
   const [description, setDescription] = useState<string>(editMemo.description);
   const [date, setDate] = useState<string>(editMemo.date);
-  const [mark_div, setMark_div] = useState<number>(editMemo.mark_div);
+  const [markDiv, setMarkDiv] = useState<number>(editMemo.markDiv);
 
 
   const onChangeId = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,8 +48,8 @@ export const EditForm = memo((props: ModalButton) => {
   };
   const onChangeMarkDiv = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    const newMark_div = parseInt(e.target.value);
-    setMark_div(newMark_div);
+    const newMarkDiv = parseInt(e.target.value,10);
+    setMarkDiv(newMarkDiv);
   };
   const onClickPut = async () => {
     try {
@@ -57,11 +57,11 @@ export const EditForm = memo((props: ModalButton) => {
       await axios.put<Memo>(
         `https://raisetech-memo-api.herokuapp.com/api/memo/${id}`,
         {
-          title: title,
-          category: category,
-          description: description,
-          date: date,
-          mark_div: mark_div,
+          title,
+          category,
+          description,
+          date,
+          mark_div: markDiv,
         },
         {
           headers: {
@@ -84,7 +84,7 @@ export const EditForm = memo((props: ModalButton) => {
       setCategory("");
       setDescription("");
       setDate("");
-      setMark_div(0);
+      setMarkDiv(0);
       props.setShow(false);
     } catch (error) {
       toast.error("失敗しました");

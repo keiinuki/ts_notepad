@@ -8,11 +8,7 @@ import toast, { Toaster } from "react-hot-toast"; import {
   Input,
   Button,
   Textarea,
-  Radio, RadioGroup,
-  FormErrorMessage,
-  FormHelperText,
 } from "@chakra-ui/react";
-import Calendar from "react-calendar";
 import { Keys, getItem } from "../utils/LocalStorage";
 import { Memo } from "../type/Type"
 import { LogoutButton } from "../components/LogoutButton";
@@ -24,7 +20,7 @@ export const Notepad = () => {
   const [category, setCategory] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [date, setDate] = useState<string>("");
-  const [mark_div, setMark_div] = useState<number>(0);
+  const [markDiv, setMarkDiv] = useState<number>(0);
   const [memos, setMemos] = useState<Memo>();
   const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -44,8 +40,8 @@ export const Notepad = () => {
   };
   const onChangeMarkDiv = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    const newMark_div = parseInt(e.target.value)
-    setMark_div(newMark_div)
+    const newMarkDiv = parseInt(e.target.value,10)
+    setMarkDiv(newMarkDiv)
   };
 
   const onClickAdd = async () => {
@@ -53,11 +49,11 @@ export const Notepad = () => {
       const token = getItem(Keys.access_token);
       const response = await axios.post<Memo>("https://raisetech-memo-api.herokuapp.com/api/memo",
         {
-          title: title,
-          category: category,
-          description: description,
-          date: date,
-          mark_div: mark_div,
+          title,
+          category,
+          description,
+          date,
+          mark_div: markDiv,
         }, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -69,7 +65,7 @@ export const Notepad = () => {
       setCategory("");
       setDescription("");
       setDate("");
-      setMark_div(0);
+      setMarkDiv(0);
     }
     catch (error) {
       console.error("失敗しました");
@@ -141,7 +137,7 @@ export const Notepad = () => {
           <br />
           {memos?.date}
           <br />
-          {memos?.mark_div}
+          {memos?.markDiv}
         </p>
         <br />
         <Box>
@@ -152,7 +148,7 @@ export const Notepad = () => {
       <Box>
         <LogoutButton color="white" />
 
-        <BackHomeButton />
+        <BackHomeButton color="white" />
 
         <Link to="/">HOMEはこちら</Link>
       </Box>

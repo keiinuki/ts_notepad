@@ -4,16 +4,14 @@ import { Notepad } from "../pages/Notepad";
 import { PastArticles } from "../pages/PastArticles";
 import { Page404 } from "../pages/Page404";
 
-export const Router = () => {
-  return (
+export const Router = () => 
     <Switch>
       <Route exact path="/">
         <Home />
       </Route>
       <Route
         path="/notepad"
-        render={({ match: { url } }) => {
-          return (
+        render={({ match: { url } }) =>
             <Switch>
               <Route exact path={`${url}`}>
                 <Notepad />
@@ -24,13 +22,9 @@ export const Router = () => {
               <Route path={`${url}/*`}>
                 <Page404 />
               </Route>
-            </Switch>
-          )
-        }}
+            </Switch>}
       />
       <Route path="/*">
         <Page404 />
       </Route>
-    </Switch>
-  )
-}
+    </Switch>;
