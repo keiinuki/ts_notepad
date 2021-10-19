@@ -21,7 +21,7 @@ export const LoginForm = memo(() => {
   const onClickLogin = async () => {
     try {
       const response = await axios
-        .post<string>("https://raisetech-memo-api.herokuapp.com/api/login", {
+        .post("https://raisetech-memo-api.herokuapp.com/api/login", {
           email,
           password,
         })
