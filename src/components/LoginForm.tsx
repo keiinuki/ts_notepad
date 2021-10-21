@@ -18,10 +18,13 @@ export const LoginForm = memo(() => {
     e.preventDefault();
     setPassword(e.target.value);
   };
+  type T = {
+  access_token: string;
+};
   const onClickLogin = async () => {
     try {
-      const response: string = await axios
-        .post("https://raisetech-memo-api.herokuapp.com/api/login", {
+      const response = await axios
+        .post<T>("https://raisetech-memo-api.herokuapp.com/api/login", {
           email,
           password,
         })

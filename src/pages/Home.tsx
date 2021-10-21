@@ -5,7 +5,7 @@ import { LoginModalButton } from "../components/LoginModalButton"
 
 
 import { ToArticlesButton } from "../components/ToArticlesButton";
-
+// eslint-disable-next-line
 export const Home = () =>
     <Box p={25} bg="gray.50">
       <Text fontSize={32} textAlign={["center"]}>

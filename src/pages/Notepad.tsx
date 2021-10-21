@@ -14,7 +14,7 @@ import { Memo } from "../type/Type"
 import { LogoutButton } from "../components/LogoutButton";
 import { ToArticlesButton } from "../components/ToArticlesButton";
 import { BackHomeButton } from "../components/BackHomeButton";
-
+// eslint-disable-next-line
 export const Notepad = () => {
   const [title, setTitle] = useState<string>("");
   const [category, setCategory] = useState<string>("");

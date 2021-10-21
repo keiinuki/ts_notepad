@@ -29,6 +29,7 @@ module.exports = {
     "no-use-before-define": "off",
     "no-shadow": "off",
     "no-console": "off",
+    "camelcase": "off",
     "react/no-array-index-key": "off",
     "react-hooks/exhaustive-deps": "off",
     "@typescript-eslint/no-use-before-define": "off",
