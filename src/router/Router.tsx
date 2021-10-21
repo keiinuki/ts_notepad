@@ -3,7 +3,7 @@ import { Home } from "../pages/Home";
 import { Notepad } from "../pages/Notepad";
 import { PastArticles } from "../pages/PastArticles";
 import { Page404 } from "../pages/Page404";
-
+// eslint-disable-next-line
 export const Router = () => 
     <Switch>
       <Route exact path="/">

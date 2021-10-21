@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { Box, Text } from "@chakra-ui/react";
-import { LoginModalButton } from "../components/LoginModalButton"
-
-
+import { LoginModalButton } from "../components/LoginModalButton";
 import { ToArticlesButton } from "../components/ToArticlesButton";
 // eslint-disable-next-line
 export const Home = () =>

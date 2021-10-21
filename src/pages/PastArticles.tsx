@@ -18,7 +18,7 @@ import { LogoutButton } from "../components/LogoutButton";
 import { DeleteMemoButton } from "../components/DeleteMemoButton";
 import { EditModalButton } from "../components/EditModalButton"
 import { BackHomeButton } from "../components/BackHomeButton";
-
+// eslint-disable-next-line
 export const PastArticles = () => {
   const token = getItem(Keys.access_token);
   const [getMemos, setGetMemos] = useRecoilState<Memo[]>(getMemosState);
